@@ -112,25 +112,26 @@ The architecture integrates:
 The platform is organized into multiple architectural layers, from the underlying compute environment up to automated ML operations.
 
 ```text
-┌──────────────────────────────────────────────────────────────┐
-│                    NVIDIA AI FACTORY                        │
-├──────────────────────────────────────────────────────────────┤
-│ Layer 14 │ Core Storage / MinIO                             │
-│ Layer 13 │ FinOps / OpenCost                                │
-│ Layer 12 │ Disaster Recovery / Velero                       │
-│ Layer 11 │ Alerting / Alertmanager                          │
-│ Layer 10 │ Observability / Prometheus + Grafana + Loki      │
-│ Layer  9 │ Automated Retraining / Argo Events               │
-│ Layer  8 │ Drift Detection / Evidently                      │
-│ Layer  7 │ Model Lifecycle / MLflow + MinIO                 │
-│ Layer  6 │ Model Serving / KServe + Triton                 │
-│ Layer  5 │ Training / Argo Workflows + DVC                  │
-│ Layer  4 │ Data / Code / Model Versioning                   │
-│ Layer  3 │ GitOps / Argo CD                                 │
-│ Layer  2 │ Multi-Tenancy + RBAC + Kueue + GPU Scheduling   │
-│ Layer  1 │ Kubernetes / Minikube                            │
-│ Layer  0 │ Windows + WSL2 + NVIDIA GPU + Docker            │
-└──────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+|                          NVIDIA AI FACTORY                             │ 
+|────────────────────────────────────────────────────────────────────────│
+| LAYER 0  | HOST / COMPUTE                                              |
+| LAYER 1  | KUBERNETES CONTROL PLANE / PLATFORM                         |                          
+| LAYER 2A | MULTI-TENANCY / RBAC / RESOURCE GOVERNANCE / GPU SCHEDULING │
+| LAYER 3  | GITOPS CONTROL PLANE                                        │
+| LAYER 4  | DATA / CODE / MODEL VERSIONING                              │
+| LAYER 5  | TRAINING / MLOPS PIPELINE                                   │
+| LAYER 6  | MODEL SERVING                                               │
+| LAYER 7  | MODEL LIFECYCLE                                             │
+| LAYER 8  | INFERENCE OBSERVABILITY / DRIFT                             │
+| LAYER 9  | AUTOMATED RETRAINING EVENT FLOW                             │
+| LAYER 10 | OBSERVABILITY PLATFORM                                      │
+| LAYER 11 | ALERTING                                                    │
+| LAYER 12 | DISASTER RECOVERY                                           │
+| LAYER 13 | FINOPS / COST VISIBILITY                                    │
+| LAYER 14 | CORE STORAGE ARCHITECTURE                                   │
+└────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### End-to-End Flow
